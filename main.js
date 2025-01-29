@@ -1,6 +1,7 @@
 const buttons = document.querySelectorAll("button");
 let result = document.querySelector(".result");
-let score = document.querySelector(".score")
+let score = document.querySelector(".score");
+let span = document.querySelector("span");
 
 function getComputerChoice(){
     const computerChoice = Math.floor(Math.random()*3);
@@ -45,6 +46,7 @@ function playRound(playerSelection, computerSelection){
         }
         score.textContent = `Computer score: ${computerScore}, Human score: ${humanScore} `;
         round++;
+        span.textContent = round;
 
         if (round >= 5){
             endGame();
